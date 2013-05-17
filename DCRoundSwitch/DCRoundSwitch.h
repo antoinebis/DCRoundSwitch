@@ -17,15 +17,22 @@
 @class DCRoundSwitchKnobLayer;
 
 @interface DCRoundSwitch : UIControl
+{
+@private
+    DCRoundSwitchOutlineLayer *outlineLayer;
+    DCRoundSwitchToggleLayer *toggleLayer;
+    DCRoundSwitchKnobLayer *knobLayer;
+    CAShapeLayer *clipLayer;
+    BOOL ignoreTap;
+}
 
-@property (nonatomic, retain) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
+@property (nonatomic, strong) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
-@property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
-@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
-
-+ (Class)knobLayerClass;
-+ (Class)outlineLayerClass;
-+ (Class)toggleLayerClass;
+@property (nonatomic, copy) NSString *onText;			// default: 'ON' - not automatically localized!
+@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - not automatically localized!
+@property (nonatomic, copy) UIImage *onImage;
+@property (nonatomic, copy) UIImage *offImage;
+@property (nonatomic, copy) UIImage *knobLayerImage;
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated;
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents;
