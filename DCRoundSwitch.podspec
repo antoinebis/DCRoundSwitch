@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "DCRoundSwitch with Images"
+  s.name         = "DCRoundSwitch"
   s.version      = "0.0.2"
   s.summary      = "A 'modern' replica of UISwitch."
   s.homepage     = "https://github.com/antoinebis/DCRoundSwitch"
